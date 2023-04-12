@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+    <h1>Report page</h1>
+    {% for kmom, report in kmoms %}
+        <p>{{ report|raw }}</p>
+    {% endfor %}
+{% endblock %}

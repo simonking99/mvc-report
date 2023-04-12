@@ -1,0 +1,98 @@
+body {
+  background-color: lightgray;
+  margin: 0 auto;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 800px;
+  margin-bottom: 100px;
+}
+
+h1 {
+  border-bottom: 4px double #ccc;
+}
+
+.site-header {
+  background-size: cover;
+  height: 250px;
+}
+
+.site-title {
+    font-size: 2em;
+}
+
+nav {
+  background-color: #E8F2F1;
+  font-size: 1.2em;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: white;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #E8F2F1;
+  text-align: center;
+}
+
+.simon {
+  width: 200px;
+  height: 200px;
+  float: right;
+  margin-left: 20px;
+}
+
+.texten {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.github {
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+  padding-right: 50px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.vl {
+  border-left: 3px solid #e8f2f1;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 180;
+}
