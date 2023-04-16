@@ -96,3 +96,36 @@ footer {
   left: 50%;
   top: 180;
 }
+
+.die {
+  font-size: 2em;
+}
+
+input {
+  font-size: 1em;
+}
+
+.flash-notice {
+  padding: 0.5em;
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+.flash-notice:before {
+  content: "ⓘ";
+}
+
+.flash-warning {
+  padding: 0.5em;
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+.flash-warning:before {
+  content: "⚠";
+}
+
+.deck{
+  color: red;
+  font-size: 70px;
+}
