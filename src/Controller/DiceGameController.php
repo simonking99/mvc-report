@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Dice\Dice;
 use App\Dice\DiceGraphic;
 use App\Dice\DiceHand;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -150,7 +151,7 @@ class DiceGameController extends AbstractController
         }
         $this->addFlash(
             'notice',
-            'Your rerolled the current hand!'
+            'Your rerolled the dies!'
         );
         $session->set("pig_round", $roundTotal + $round);
         return $this->redirectToRoute('pig_play');

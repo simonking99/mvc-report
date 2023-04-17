@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Pig Game{% endblock %}
+
+{% block body %}
+<h1>Your Deck</h1>
+<div class="deck">
+    {% for card in diceValues %}
+        <span class="{{ card }}">{{ card }}</span>
+    {% endfor %}
+</div>
+{% endblock %}
