@@ -3,9 +3,9 @@
 {% block title %}Pig Game{% endblock %}
 
 {% block body %}
-<h1>Current Deck</h1>
+<h1>Shuffled Deck </h1>
 <div class="deck">
-    {% for card in init_deck %}
+    {% for card in shuffled_deck %}
         <span class="{{ card }}">{{ card }}</span>
     {% endfor %}
 </div>

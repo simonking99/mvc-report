@@ -12,36 +12,53 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CardGameController extends AbstractController
 {
-    #[Route("/game/card", name: "card_start", methods: ['GET'])]
-    public function card_start(): Response
-    {
-        return $this->render('card.html.twig');
+    #[Route("/card", name: "card_init_get", methods: ['GET'])]
+    public function init(): Response
+    {   
+        $data = [
+            "showdeck" => $this->generateUrl("card_play"),
+            "shuffledeck" => $this->generateUrl("card_shuffle"),
+        ];
+        return $this->render('card.html.twig', $data);
     }
-    
-    //Route där jag skapar sessionvariabel och tilldelar värde.
-    #[Route("/game/card", name: "card_post", methods: ['POST'])]
+
+    #[Route("/card", name: "card_init_post", methods: ['POST'])]
     public function initCallback(
         Request $request,
         SessionInterface $session
     ): Response
     {
-        $deck = new DeckOfCards();
-        $session->set("pig_dicehand", $deck);
+        //Sets the session variable to DeckOfCards()
+        $hand = new DeckOfCards();
+        $session->set("card_deck", $hand);
         return $this->redirectToRoute('card_play');
     }
 
-    //Route där jag hämtar sessionvariabel
-    #[Route("/game/card/card_deck", name: "card_play", methods: ['GET'])]
-    public function play(
+    #[Route("/card/deck", name: "card_play", methods: ['GET'])]
+    public function play_deck(
         SessionInterface $session
     ): Response
     {
-        $dicehand = $session->get("pig_dicehand");
+        //Retrieves the session variable current_deck
+        $current_deck = $session->get("card_deck");
 
         $data = [
-            "diceValues" => $dicehand->get_deck()
+            "init_deck" => $current_deck->get_deck() 
         ];
 
         return $this->render('card/card_deck.html.twig', $data);
+    }
+
+    #[Route("/card/deck/shuffle", name: "card_shuffle", methods: ['GET'])]
+    public function shuffle(
+        SessionInterface $session
+    ): Response
+    {
+        $shuffle_deck = $session->get("card_deck");
+
+        $data = [
+            "shuffled_deck" => $shuffle_deck->shuffle_deck() 
+        ];
+        return $this->render('card/shuffled_card_deck.html.twig', $data);
     }
 }
