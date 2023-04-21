@@ -2,11 +2,12 @@
 {% block title %}Card Game{% endblock %}
 {% block body %}
 
-<h1>Shuffled Deck</h1>
+<h1>Drawn cards</h1>
 <div class="deck">
-    {% for card in shuffled_deck %}
+     {% for card in diceRoll %}
         <span class="{{ card }}">{{ card }}</span>
-    {% endfor %}
+      {% endfor %}
+    <p>Amount of cards left in the deck: {{ count }}</p>
 </div>
 
 {% endblock %}

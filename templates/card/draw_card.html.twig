@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block title %}Card Game{% endblock %}
+{% block body %}
+
+<h1>Drawn card</h1>
+
+<div class="deck">
+    <span class="{{ draw_card }}">{{ draw_card }}</span>
+</div>
+
+<span>
+    <p>Amount of cards left in the deck: {{ count_cards }}</p>
+</span>
+
+{% endblock %}
