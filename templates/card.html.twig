@@ -1,9 +1,24 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Pig Game{% endblock %}
+{% block title %}Card Game{% endblock %}
 
 {% block body %}
 <h1>Card Game</h1>
-<li><a href="{{ showdeck }}">Show current Deck</a></li>
-<li><a href="{{ shuffledeck }}">Shuffle current Deck</a></li>
+<form method="post" action="">
+    <h4><li><a href="{{ showdeck }}" class="link1">Show Deck</a></li></h4>
+    <h4><li><a href="{{ shuffledeck }}">Shuffle Deck</a></li></h4>
+    <h4><li><a href="{{ drawcard }}">Draw Card</a></li></h4>
+</form>
+<br>
+<img src="{{ asset('img/uml.png') }}" class="uml" width="500">
+<p>Jag har skapat 2 olika klasser för denna uppgiften, Jag har skapat klasserna Card och DeckOfCard.
+    I min DeckOfCard klass har jag skapat tre metoder, "get_deck, shuffle_deck, count_deck".</p>
+    <h4>- get_deck returnerar en kortlek</h4>
+    <h4>- shuffle_deck blandar och returnerar kortleken</h4>
+    <h4>- count_deck räknat antalet element i arrayen</h4>
+
+<p>I min klass Card så ärver jag från DeckOfCard vilket betyder att jag kommer åt alla metoder som finns i DeckOfCard även i Card.
+    I min Card klass har jag skapat en metoder, "draw_card".</p>
+    <h4>- draw_card drar ett kort från kortleken vilket gör att antalet kort blir mindre.</h4>
+
 {% endblock %}
