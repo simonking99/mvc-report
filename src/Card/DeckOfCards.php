@@ -2,16 +2,12 @@
 
 namespace App\Card;
 
-class DeckOfCards
+#Dice ärver från Card
+class DeckOfCards extends Card
 {
     public function __construct()
     {
-        $this->value = [
-            '🃁','🃂','🃃','🃄','🃅','🃆','🃇','🃈','🃉','🃊','🃋','🃎','🃍',
-            '🃑','🃒','🃓','🃔','🃕','🃖','🃗','🃘','🃙','🃚','🃛','🃞','🃝',
-            '🂱','🂲','🂳','🂴','🂵','🂶','🂷','🂸','🂹','🂺','🂻','🂾','🂽',
-            '🂡','🂢','🂣','🂤','🂥','🂦','🂧','🂨','🂩','🂪','🂫','🂮','🂭',
-        ];
+        parent::__construct();
     }
 
     public function get_deck(): array
@@ -24,5 +20,9 @@ class DeckOfCards
         shuffle($this->value);
         return $this->value;
     }
-}
 
+    public function count(): int
+    {
+        return count($this->value);
+    }
+}
