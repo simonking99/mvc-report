@@ -27,6 +27,12 @@
   onClick="this.form.action='{{ path('api_deck_shuffled') }}';"
   >
   <hr>
+
+  <p>Click on button to draw a card from the deck</p>
+  <input type="submit" name="draw" value="POST api/deck/draw"
+  onClick="this.form.action='{{ path('api_card_draw') }}';"
+  >
+  <hr>
 </form>
 </div>
 
