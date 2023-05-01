@@ -33,6 +33,12 @@
   onClick="this.form.action='{{ path('api_card_draw') }}';"
   >
   <hr>
+
+  <p>Click on button to draw multiple cards from deck</p>
+  <input type="submit" name="draw_many_cards" value="POST api/deck/draw/:number"
+  onClick="this.form.action='{{ path('api_card_draw_many', {number: 5}) }}';"
+  >
+  <hr>
 </form>
 </div>
 
