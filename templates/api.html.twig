@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Api{% endblock %}
+
+{% block body %}
+
+<h1>Api</h1>
+<hr>
+<div class="buttons">
+<form method="get" action="">
+  <p>Click the button for a random quote</p>
+  <input type="submit" name="quote" value="GET api/quote"
+  onClick="this.form.action='{{ path('json_quote') }}';"
+  >
+  <hr>
+</form>
+</div>
+
+
+{% endblock %}
