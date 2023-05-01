@@ -13,6 +13,12 @@
   onClick="this.form.action='{{ path('json_quote') }}';"
   >
   <hr>
+
+  <p>Click on button to get a sorted deck</p>
+  <input type="submit" name="sorted" value="GET api/deck"
+  onClick="this.form.action='{{ path('api_deck_sorted') }}';"
+  >
+  <hr>
 </form>
 </div>
 
