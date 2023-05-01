@@ -20,6 +20,14 @@
   >
   <hr>
 </form>
+
+<form method="post" action="">
+  <p>Click on button to shuffle deck and restore amount of cards</p>
+  <input type="submit" name="shuffle" value="POST api/deck/shuffle"
+  onClick="this.form.action='{{ path('api_deck_shuffled') }}';"
+  >
+  <hr>
+</form>
 </div>
 
 
