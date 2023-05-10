@@ -8,11 +8,12 @@ class DeckOfCards extends Card
     public function __construct()
     {
         parent::__construct();
+        $this->card_array = new Card();
     }
 
     public function get_deck(): array
     {
-        return $this->value;
+        return $this->card_array->get_cards();
     }
 
     public function shuffle_deck(): array
