@@ -24,7 +24,7 @@ class CardGameControllerJson extends AbstractController
     {
         $deck = new DeckOfCards();
 
-        $response = new JsonResponse($deck);
+        $response = new JsonResponse($deck->get_deck());
         $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
 
         return $response;

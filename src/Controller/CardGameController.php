@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Card\DeckOfCards;
+use App\Card\DeckOfCardsJoker;
 use App\Card\Card;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,7 +31,7 @@ class CardGameController extends AbstractController
         SessionInterface $session
     ): Response
     {
-        $deck = new DeckOfCards();
+        $deck = new DeckOfCardsJoker();
         $session->set("new_deck", $deck);
         // Redirect to the "card_play" route
         return $this->redirectToRoute('card_play');
@@ -44,15 +45,15 @@ class CardGameController extends AbstractController
         $current_deck = $session->get("new_deck");
         if ($current_deck !== null) {
             $data = [
-                "init_deck" => $current_deck->get_deck()
+                "init_deck" => $current_deck->add_joker()
             ];
             return $this->render('card/card_deck.html.twig', $data);
         } else {
-            $deck = new DeckOfCards();
+            $deck = new DeckOfCardsJoker();
             $session->set("new_deck", $deck);
             $current_deck = $session->get("new_deck");
             $data = [
-                "init_deck" => $current_deck->get_deck()
+                "init_deck" => $current_deck->add_joker()
             ];
         }
         return $this->render('card/card_deck.html.twig', $data);
